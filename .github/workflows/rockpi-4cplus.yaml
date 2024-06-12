@@ -1,6 +1,12 @@
 ---
 name: Build RockPi 4C+
 
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+  packages: write
+
 on:
   workflow_dispatch:
 
