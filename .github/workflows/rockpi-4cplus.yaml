@@ -18,7 +18,6 @@ jobs:
       - uses: armbian/build@main
         with:
           armbian_token: "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
-          armbian_target: "build"
           armbian_kernel_branch: "current"
           armbian_ui: "server"
           armbian_release: "jammy"                        # userspace
