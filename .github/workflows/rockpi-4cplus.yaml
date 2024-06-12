@@ -4,8 +4,9 @@ name: Build RockPi 4C+
 permissions:
   id-token: write
   contents: read
-  pull-requests: write
+  pull-requests: read
   packages: write
+  actions: write
 
 on:
   workflow_dispatch:
@@ -16,7 +17,10 @@ jobs:
     steps:
       - uses: armbian/build@main
         with:
-          armbian_token:     "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
-          armbian_release:   "jammy"                        # userspace
-          armbian_target:    "build"                        # build=image, kernel=kernel
-          armbian_board:     "rockpi-4cplus"                # build target
+          armbian_token: "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
+          armbian_target: "build"
+          armbian_kernel_branch: "current"
+          armbian_ui: "server"
+          armbian_release: "jammy"                        # userspace
+          armbian_target: "build"                        # build=image, kernel=kernel
+          armbian_board: "rockpi-4cplus"                # build target
