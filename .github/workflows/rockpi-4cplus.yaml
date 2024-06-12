@@ -20,6 +20,7 @@ jobs:
           armbian_token: "${{ secrets.GITHUB_TOKEN }}"  # GitHub token
           armbian_kernel_branch: "current"
           armbian_ui: "server"
+          armbian_version: "v24.05"
           armbian_release: "jammy"                        # userspace
           armbian_target: "build"                        # build=image, kernel=kernel
           armbian_board: "rockpi-4cplus"                # build target
